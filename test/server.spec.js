@@ -47,7 +47,7 @@ describe('The server', function() {
 
   // the same thing using mocha / chai / request
   it('returns a 200 status code', function (done) {
-    request.get('http://localhost:8000', function (err, res, body){
+    request.get('http://localhost:3000', function (err, res, body){
       expect(res.statusCode).to.equal(200);
       done();
     });

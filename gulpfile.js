@@ -1,7 +1,11 @@
+//require gulp
 var gulp = require('gulp');
+
+//require gulp plugins
 var livereload = require('gulp-livereload');
 var jshint = require('gulp-jshint');
 var stylish = require('jshint-stylish');
+var shell = require('gulp-shell');
 
 /*
 PASTE <script src="//localhost:35729/livereload.js"></script>
@@ -65,6 +69,16 @@ gulp.task('server', function() {
   .pipe(jshint.reporter(stylish));
 });
 
+gulp.task('startServer', shell.task([
+  'nodemon server/server.js'
+]));
+
+gulp.task('openInBrowser', shell.task([
+  'google-chrome http://localhost:3000', 
+  'open http://localhost:3000'
+]));
+
+
 gulp.task('watch', function () {
   livereload.listen();
   
@@ -76,4 +90,4 @@ gulp.task('watch', function () {
   gulp.watch(paths.server,['server']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['watch', 'startServer', 'openInBrowser']);
