@@ -44,6 +44,27 @@ gulp.task('scripts', function() {
   .pipe(livereload());
 });
 
+gulp.task('sass', function () {
+  gulp.src([paths.sass])
+
+    .pipe(sourcemaps.init())
+
+    .pipe(sass({
+      includePaths: [paths.foundationSass],
+      sourcemap: true
+    }))
+
+    .pipe(sourcemaps.write())
+
+    .on('error', sass.logError)
+    //.on('error', function (error) {
+    //  console.error(error);
+    //  this.emit('end');
+    //})
+
+    .pipe(gulp.dest('../main.css'))
+
+});
 
 gulp.task('styles', function() {
   return gulp.src([
