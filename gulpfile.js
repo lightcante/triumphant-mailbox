@@ -57,13 +57,8 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.write())
 
     .on('error', sass.logError)
-    //.on('error', function (error) {
-    //  console.error(error);
-    //  this.emit('end');
-    //})
 
-    .pipe(gulp.dest('../main.css'))
-
+    .pipe(gulp.dest('client/public/assets/css'));
 });
 
 gulp.task('styles', function() {
