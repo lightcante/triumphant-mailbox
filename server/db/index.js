@@ -4,10 +4,8 @@ var Sequelize = require('sequelize');
 // config environment variable (exists in heroku), then use that.
 // Otherwise assume a base install of mysql
 if(process.env.DATABASE_URL) {
-
   // var orm = new Sequelize(process.env.DATABASE_URL);
   var orm = new Sequelize('mysql://localhost:3306/pickupDB');
-
 } else {
   // Change needed: Change to requiring in a config.json file
   // so people's individual logins and db's can be stored
@@ -50,7 +48,6 @@ RSVP.belongsTo(User);
 // This commented out section is for prepopulation of data
 // It drops all tables in the database (force:true) and
 // inputs a large amount of
-
 orm.sync({force:true}).then(function(){
   User.bulkCreate([
     { username: 'kurt',password:'kurt', email:'kurt@kurt.com' },
@@ -79,7 +76,6 @@ orm.sync({force:true}).then(function(){
 // Creates tables if they are not there. Now that the ability to make
 // rsvp's is in the program, bulk data may not be needed at all.
 // Use either this or the sync(force:true) but not both
-
 // orm.sync();
 
 //exports tables so other files can reference
