@@ -10,6 +10,7 @@ var stylish = require('jshint-stylish');
 var shell = require('gulp-shell');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
+var open = require('gulp-open');
 
 /*
 PASTE <script src="//localhost:35729/livereload.js"></script>
@@ -94,10 +95,18 @@ gulp.task('startServer', shell.task([
   'nodemon server/server.js'
 ]));
 
-gulp.task('openInBrowser', shell.task([
-  'google-chrome http://localhost:3000', 
-  'open http://localhost:3000'
-]));
+gulp.task('openInBrowser', function(){
+  var options = {
+    url: 'http://localhost:3000'
+  };
+  gulp.src('./client/public/index.html')
+  .pipe(open('', options));
+});
+
+//gulp.task('openInBrowser', shell.task([
+//  'google-chrome http://localhost:3000', 
+//  'open http://localhost:3000'
+//]));
 
 
 gulp.task('watch', function () {
@@ -112,4 +121,4 @@ gulp.task('watch', function () {
   gulp.watch(paths.server,['server']);
 });
 
-gulp.task('default', ['watch', 'startServer', 'openInBrowser']);
+gulp.task('default', ['sass', 'watch', 'startServer', 'openInBrowser']);
