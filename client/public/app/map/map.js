@@ -20,10 +20,18 @@ angular.module('app.map', [])
       "location": latLng
     },
     function(results, status) {
-      if (status === google.maps.GeocoderStatus.OK)
-        document.getElementById("address").innerHTML = results[0].formatted_address;
-      else
-        document.getElementById("error").innerHTML += "Unable to retrieve your address" + "<br />";
+      var  innerHTML = '';
+      var elem = '';
+      if (status === google.maps.GeocoderStatus.OK){
+        innerHTML = results[0].formatted_address;
+        elem = 'address';
+      }
+      else {
+        innerHTML = 'Unable to retrieve you address';
+        elem = 'error';
+      }
+      document.getElementById(elem).innerHTML = innerHTML;
+      console.log('map.js', innerHTML);
     });
   };
 

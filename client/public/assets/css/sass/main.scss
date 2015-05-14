@@ -20,6 +20,34 @@
 // @import "sections/footer;"
 
 // Global styles below
-h1.test {
-  background: green; 
+$contentHeaderMargin: 100px;
+
+.map-container {
+  position: absolute;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+
+  .map-canvas {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.content {
+  position: absolute;
+  z-index: 10;
+
+  h1 {
+    margin-left: $contentHeaderMargin;
+  }
+
+  .address {
+    margin-left: $contentHeaderMargin; 
+
+      .header-label {
+        display: block;
+        width: 100%;
+      }
+  }
 }
