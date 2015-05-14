@@ -40,21 +40,33 @@ $contentHeaderMargin: 100px;
 .grid-frame {
   width: 100%;
   height: 100%;
-
-  &.content{
-    position: absolute;
-    z-index: 10;
-
-    h1 {
-      margin-left: $contentHeaderMargin;
-    }
-
-  }
 }
 
-.stateview {
-    background-color: $primary-color;
-    z-index: 5;
+// .content{
+//   position: absolute;
+//   z-index: 1;
+
+//   h1 {
+//     margin-left: $contentHeaderMargin;
+//   }
+
+// }
+
+.sidepanel {
+  @include breakpoint(small) {
+    @include grid-block(12, horizontal, false, right);
+
+  }
+
+
+  .stateview {
+      background-color: $primary-color;
+      z-index: 5;
+
+      //sidebar align-right (line 48)
+      //align-center small-4 (from 49)
+  }
+
 }
 
 

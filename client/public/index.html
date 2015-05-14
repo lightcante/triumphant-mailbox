@@ -39,14 +39,14 @@
 <body ng-app='app'>
 
 
-  <div class="grid-frame content">
+  <div class="grid-frame">
     <div class="map-container" ng-controller="mapController" ng-init="geolocateUser()">
       <!-- Used id's. I am ashamed -->
       <div id="map-canvas" class="map-canvas"></div>
     </div>
 
-    <div class="sidebar align-right grid-block">
-      <div class="align-center small-4 grid-block">
+    <div class="grid-block">
+      <div class="grid-block sidepanel">
         <!-- <h1>Pickup!</h1> -->
         <div ui-view class="stateview"></div>
       </div>
