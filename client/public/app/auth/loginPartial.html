@@ -7,12 +7,11 @@
 
       <input type="password" ng-model='user.password' placeholder='Password' ng-minlength="4" required>
 
-      <center>
-        <button class='buttonInput' type='submit' ng-disabled="loginForm.$invalid">Login</button><br>
-        <a ui-sref="signup">Don't have an account? <strong>Sign Up</strong></a>
-      </center>
+      <button class='buttonInput' type='submit' ng-disabled="loginForm.$invalid">Login</button><br>
+      <a ui-sref="signup">Don't have an account? <strong>Sign Up</strong></a>
+
     </form>
 
   </div> <!-- end userInput -->
 
-</div> <!-- end login partial --> 
+</div> <!-- end login partial -->
