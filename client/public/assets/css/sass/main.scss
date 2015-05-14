@@ -1,12 +1,14 @@
 // Import overridden Bootstrap variables BEFORE their definition in the vendor files
+@import 'settings';
 @import 'library/variables';
-@import 'library/mixins';
+//@import 'library/mixins';
+
 
 
 // Add core Bootstrap styles. Comment and uncomment functionality inside 'bootstrap.scss' as required to keep 'main.css'
 // as small as possible.
 // @import "font-awesome";
-// @import "bootstrap";
+@import "foundation";
 
 // Styles shared between custom components
 // @import "snippets/bs-forms";
@@ -42,12 +44,29 @@ $contentHeaderMargin: 100px;
     margin-left: $contentHeaderMargin;
   }
 
-  .address {
-    margin-left: $contentHeaderMargin; 
 
-      .header-label {
-        display: block;
-        width: 100%;
-      }
-  }
+}
+.grid-frame {
+  width: 100%;
+  height: 100%;
+}
+
+.sidebar {
+    background-color: $primary-color;
+    z-index: 5;
+}
+
+
+
+
+
+
+.address {
+  margin-left: $contentHeaderMargin; 
+  display: none;
+
+    .header-label {
+      display: block;
+      width: 100%;
+    }
 }

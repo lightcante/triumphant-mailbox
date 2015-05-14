@@ -21,10 +21,14 @@ $ui-lg-min:               1200px !default;
 // -------------------------------------------------------------------
 // Pickup Color Palette
 //----------------------------------------------------------------------
-$brand-primary:         #00ad94 !default; // green
-$brand-secondary:       #e8834a !default; // orange
-$brand-workout:         #a09ea8 !default;
-$brand-info:            #5bc0de !default;
-$brand-warning:         #f0ad4e !default;
-$brand-danger:          #d9534f !default;
-$brand-background:      #e9eaed !default;
+// Application Colors
+$primary-color: #00558b;
+$secondary-color: #f1f1f1;
+$alert-color: #F04124;
+$info-color: #A0D3E8;
+$success-color: #43AC6A;
+$warning-color: #F08A24;
+$dark-color: #232323;
+$gray: #dfdfdf;
+$gray-dark: darken($gray, 8);
+$gray-light: lighten($gray, 8);
