@@ -53,11 +53,18 @@ $contentHeaderMargin: 100px;
 // }
 
 .sidepanel {
+  //breakpoint for small sizes
   @include breakpoint(small) {
     @include grid-block(12, horizontal, false, right);
-
   }
-
+  //breakpoint for medium sizes
+  @include breakpoint(medium) {
+    @include grid-block(12, horizontal, false, right);
+  }
+  //breakpoint for lrg sizes
+  @include breakpoint(large) {
+    @include grid-block(12, horizontal, false, right);
+  }
 
   .stateview {
       background-color: $primary-color;
