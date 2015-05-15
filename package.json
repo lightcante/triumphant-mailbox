@@ -45,6 +45,7 @@
     "gulp-uglify": "^1.2.0",
     "jshint-stylish": "~1.0.2",
     "mocha": "~2.2.4",
+    "open": "0.0.5",
     "supertest": "~0.15.0"
   }
 }
