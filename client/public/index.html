@@ -52,14 +52,15 @@
 <body ng-app='app'>
 
 
-  <div class="grid-frame">
+  <div class="grid-frame" ng-controller="AppCtrl">
     <div class="map-container" ng-controller="mapController" ng-init="geolocateUser()">
+      <p>{{foo}}Testing</p>
       <!-- Used id's. I am ashamed -->
       <div id="map-canvas" class="map-canvas"></div>
     </div>
 
     <div class="grid-block sidepanel">
-      <div class="grid-block stateview">
+      <div class="grid-block stateview loggedIn">
         <!-- <h1>Pickup!</h1> -->
         <div ui-view ></div>
       </div>

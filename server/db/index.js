@@ -60,6 +60,7 @@ orm.sync({force:true}).then(function(){
     { name: 'Mosswood Park', address:'397 W MacArthur Blvd Oakland, CA 94611', rating: 5, placeId: 'EiwzOTcgVyBNYWNBcnRodXIgQmx2ZCwgT2FrbGFuZCwgQ0EgOTQ2MDksIFVTQQ'},
     { name: 'Potrero Hill Recreation Center', address:'801 Arkansas St. San Francisco, CA 94107', rating: 4, placeId: 'ChIJdUEEFLR_j4ARHo6_zTIvyuY'},
     { name: 'Aptos Park', address:'San Francisco, CA 94127, United States', rating: 2, placeId: 'ChIJqfFWfch9j4ARt0Ip6Y5y1Ow'},
+    { name: 'Union Square, San Francisco', address: '323 Geary Street #203, San Francisco, CA 94102, United States', rating: 5, placeId: 'ChIJW5D3LYmAhYARb92CmHj1bOM'}
   ]);
 
   RSVP.bulkCreate([
@@ -69,7 +70,14 @@ orm.sync({force:true}).then(function(){
     { starttime: new Date('December 19, 2015 15:00:00'), endtime: new Date('December 19, 2015 16:00:00'), CourtId: 3, UserId:3 },
     { starttime: new Date('December 21, 2015 15:00:00'), endtime: new Date('December 21, 2015 16:00:00'), CourtId: 4, UserId:1 },
     { starttime: new Date('December 21, 2015 15:00:00'), endtime: new Date('December 21, 2015 16:00:00'), CourtId: 4, UserId:2 },
-    { starttime: new Date('December 21, 2015 17:00:00'), endtime: new Date('December 21, 2015 18:00:00'), CourtId: 4, UserId:3 }
+    { starttime: new Date('December 21, 2015 17:00:00'), endtime: new Date('December 21, 2015 18:00:00'), CourtId: 4, UserId:3 },
+    { starttime: new Date('December 17, 2015 13:00:00'), endtime: new Date('December 17, 2015 14:00:00'), CourtId: 5, UserId:1 },
+    { starttime: new Date('December 20, 2015 13:00:00'), endtime: new Date('December 20, 2015 14:00:00'), CourtId: 5, UserId:1 },
+    { starttime: new Date('December 18, 2015 11:00:00'), endtime: new Date('December 18, 2015 12:00:00'), CourtId: 5, UserId:2 },
+    { starttime: new Date('December 19, 2015 15:00:00'), endtime: new Date('December 19, 2015 16:00:00'), CourtId: 5, UserId:3 },
+    { starttime: new Date('December 21, 2015 15:00:00'), endtime: new Date('December 21, 2015 16:00:00'), CourtId: 5, UserId:1 },
+    { starttime: new Date('December 21, 2015 15:00:00'), endtime: new Date('December 21, 2015 16:00:00'), CourtId: 5, UserId:2 },
+    { starttime: new Date('December 21, 2015 17:00:00'), endtime: new Date('December 21, 2015 18:00:00'), CourtId: 5, UserId:3 }
   ]);
 });
 

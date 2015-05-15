@@ -1,10 +1,10 @@
 angular.module('app.map', [])
 
-.controller('mapController', ['$scope','Court', function ($scope,Court){
+.controller('mapController', ['$scope','Court', '$rootScope', function ($scope,Court, $rootScope){
   // object representing the entire map
   $scope.map = {};
 
-  $scope.service = {};
+  $scope.gService = {};
 
   // object used to display information on a marker when clicked
   $scope.infowindow = {};
@@ -76,7 +76,7 @@ angular.module('app.map', [])
      $scope.infowindow = new google.maps.InfoWindow();
 
     // Declares the Google Places object (wrapper on top of the Google Maps object)
-    $scope.service = new google.maps.places.PlacesService($scope.map);
+    $scope.gService = new google.maps.places.PlacesService($scope.map);
 
     // Sets the specifications for the Google Places search
     var request = {
@@ -87,7 +87,7 @@ angular.module('app.map', [])
 
     // Uses one of the types of search Google Places has to offer (nearbySearch)
     // The second parameter is a success callback to handle the results
-    $scope.service.nearbySearch(request, $scope.populateMarkers);
+    $scope.gService.nearbySearch(request, $scope.populateMarkers);
   };
 
   /**
@@ -127,18 +127,26 @@ angular.module('app.map', [])
     });
 
     // Adds a click listener on the created marker that
-    // gets additional details from Google Places ($scope.service)
+    // gets additional details from Google Places ($scope.gService)
     google.maps.event.addListener(marker, 'click', function() {
-      $scope.service.getDetails({ placeId: place.place_id }, function(thisplace,status){
+      $scope.gService.getDetails({ placeId: place.place_id }, function(thisplace,status){
         if(status === google.maps.places.PlacesServiceStatus.OK){
           // If successful, this will use the court service to retrieve the
           // list of rsvp's for the court if it exists and set current court data
           // in the Court service
+
           Court.getCourtSchedule({
             name: thisplace.name,
             address: thisplace.formatted_address,
             placeId: thisplace.place_id
+          }, function(results){
+            $rootScope.scheduleInfo = results;
+            Court.getRSVPs(results, function(times){
+              $rootScope.times = times;
+              console.log('createMarker final rootScope:', $rootScope);
+            });
           });
+          // console.log('rootScope court sched', $rootScope.courtSchedule);
         }
       });
 
