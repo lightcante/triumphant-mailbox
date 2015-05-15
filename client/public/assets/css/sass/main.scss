@@ -24,6 +24,10 @@
 // Global styles below
 $contentHeaderMargin: 100px;
 
+body {
+  font-size: normal 100%;
+}
+
 .map-container {
   position: absolute;
   z-index: 1;
@@ -53,6 +57,7 @@ $contentHeaderMargin: 100px;
 // }
 
 .sidepanel {
+  font-size: 16px;
   //breakpoint for small sizes
   @include breakpoint(small) {
     @include grid-block(12, horizontal, false, right);
@@ -69,6 +74,22 @@ $contentHeaderMargin: 100px;
   .stateview {
       background-color: $primary-color;
       z-index: 5;
+
+      @include breakpoint(small) {
+        @include grid-block(12, horizontal, false, center);
+      }
+      //breakpoint for medium sizes
+      @include breakpoint(medium) {
+        @include grid-block(12, horizontal, false, center);
+      }
+      //breakpoint for lrg sizes
+
+      //loggedIn class keeps sidepanel on right side when logged in
+      &.loggedIn {
+        @include breakpoint(large) {
+          @include grid-block(4, horizontal, false, center);
+        }
+      }
 
       //sidebar align-right (line 48)
       //align-center small-4 (from 49)
