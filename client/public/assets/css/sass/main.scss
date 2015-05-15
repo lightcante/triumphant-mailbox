@@ -3,6 +3,7 @@
 @import 'library/variables';
 //@import 'library/mixins';
 @import'sections/schedule';
+@import 'sections/rsvp';
 
 
 
@@ -73,7 +74,8 @@ body {
   }
 
   .stateview {
-      background-color: $primary-color;
+      background-color: gray;
+      opacity: .8;
       z-index: 5;
 
       @include breakpoint(small) {
