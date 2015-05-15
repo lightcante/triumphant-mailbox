@@ -21,6 +21,7 @@ var paths = {
   images: 'client/public/assets/img/*.*',
   sass: 'client/public/assets/css/sass/**/*.scss',
   foundationSass: 'client/public/assets/lib/foundation-apps/scss',
+  fontAwesomeSass: 'client/public/assets/lib/font-awesome/scss',
   styles: 'client/public/assets/css/*.css',
   angularScripts: 'client/public/app/**/*.js',
   html: ['client/public/index.html','client/public/app/**/*.html'],
@@ -51,7 +52,7 @@ gulp.task('sass', function () {
     .pipe(sourcemaps.init())
 
     .pipe(sass({
-      includePaths: [paths.foundationSass],
+      includePaths: [paths.foundationSass, paths.fontAwesomeSass],
       sourcemap: true
     }))
 
@@ -71,7 +72,7 @@ gulp.task('styles', function() {
 
 gulp.task('html', function() {
   return gulp.src(
-    paths.html
+    paths.html 
   )
   .pipe(livereload());
 });

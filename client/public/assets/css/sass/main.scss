@@ -2,12 +2,13 @@
 @import 'settings';
 @import 'library/variables';
 //@import 'library/mixins';
+@import'sections/schedule';
 
 
 
 // Add core Bootstrap styles. Comment and uncomment functionality inside 'bootstrap.scss' as required to keep 'main.css'
 // as small as possible.
-// @import "font-awesome";
+@import "font-awesome";
 @import "foundation";
 
 // Styles shared between custom components
