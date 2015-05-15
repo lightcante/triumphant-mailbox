@@ -1,6 +1,8 @@
-angular.module('app.map', [])
+angular.module('app.map', [
+  'ui.router'
+  ])
 
-.controller('mapController', ['$scope','Court', '$rootScope', function ($scope,Court, $rootScope){
+.controller('mapController', ['$scope','Court', '$rootScope', '$state', function ($scope, Court, $rootScope, $state){
   // object representing the entire map
   $scope.map = {};
 
@@ -144,6 +146,7 @@ angular.module('app.map', [])
             Court.getRSVPs(results, function(times){
               $rootScope.times = times;
               console.log('createMarker final rootScope:', $rootScope);
+              $state.go('schedule');
             });
           });
           // console.log('rootScope court sched', $rootScope.courtSchedule);

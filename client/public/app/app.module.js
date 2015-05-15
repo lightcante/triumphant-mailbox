@@ -20,20 +20,7 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
       data: {
         authenticate: true
       },
-      url: '/',
-      views: {
-        // userInfo view would display basic info about the current user
-        'userInfo@': {
-          templateUrl: 'app/users/userPartial.html',
-          controller: 'UserController'
-        },
-        // courtInfo view would only be displayed if a court was selected from the map -
-        // might contain court name, rating, and schedule for the day
-        'courtInfo@': {
-          templateUrl: 'app/courts/courtPartial.html',
-          controller: 'CourtController'
-        }
-      }
+      url: '/'
     })
 
     // create a login state with a single view for the login form
@@ -48,6 +35,13 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
       url: '/signup',
       templateUrl: 'app/auth/signupPartial.html',
       controller: 'AuthController'
+    })
+
+    // create a signup state with a single view for the signup form
+    .state('schedule', {
+      url: '/schedule',
+      templateUrl: 'app/schedule/schedule.html',
+      controller: 'ScheduleController'
     });
 
     // Add $httpInterceptor into the array of interceptors.
