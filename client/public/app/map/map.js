@@ -65,7 +65,15 @@ angular.module('app.map', [])
     });
 
     // Creates a popup window object
-    $scope.infowindow = new google.maps.InfoWindow();
+    // var contentString ='' +
+    //   <div>
+
+    //   </div>
+
+    // $scope.infowindow = new google.maps.InfoWindow({
+    //   content: contentString
+    // });
+     $scope.infowindow = new google.maps.InfoWindow();
 
     // Declares the Google Places object (wrapper on top of the Google Maps object)
     $scope.service = new google.maps.places.PlacesService($scope.map);
@@ -83,7 +91,7 @@ angular.module('app.map', [])
   };
 
   /**
-   * Creates markers based on the results from a 
+   * Creates markers based on the results from a
    * Google Places API call
    * @param  {[Array]} results [Result from Google Places query]
    * @param  {[Object]} status  [Status object to determine if query is successful]
