@@ -1,0 +1,38 @@
+.rsvp {
+  text-align: center;
+  color: white;
+
+  .court-name {
+    font-size: 28px;
+    margin: 30px 0 0 0;
+  }
+
+  .court-address {
+    font-size: 14px;
+    margin: 30px 0 0 0;
+  }
+
+  .rsvpForm {
+    margin: 50px 0 0 0;
+
+    .inputDate{
+      background-color: red;
+      color: white;
+    }
+
+    .inputStartTime{
+      background-color: red;
+      color: white;
+    }
+
+    .inputEndTime{
+      background-color: red;
+      color: white;
+    }
+
+    .button{
+      margin: 30px 0 0 0;
+    }
+
+  }
+}
