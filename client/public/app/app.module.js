@@ -22,13 +22,13 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
       },
       url: '/',
       views: {
-        // userInfo view would display basic info about the current user 
+        // userInfo view would display basic info about the current user
         'userInfo@': {
           templateUrl: 'app/users/userPartial.html',
           controller: 'UserController'
-        }, 
-        // courtInfo view would only be displayed if a court was selected from the map - 
-        // might contain court name, rating, and schedule for the day 
+        },
+        // courtInfo view would only be displayed if a court was selected from the map -
+        // might contain court name, rating, and schedule for the day
         'courtInfo@': {
           templateUrl: 'app/courts/courtPartial.html',
           controller: 'CourtController'
@@ -36,22 +36,22 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
       }
     })
 
-    // create a login state with a single view for the login form  
+    // create a login state with a single view for the login form
     .state('login', {
       url: '/login',
-      templateUrl: 'app/auth/loginPartial.html', 
+      templateUrl: 'app/auth/loginPartial.html',
       controller: 'AuthController'
     })
 
-    // create a signup state with a single view for the signup form  
+    // create a signup state with a single view for the signup form
     .state('signup', {
       url: '/signup',
-      templateUrl: 'app/auth/signupPartial.html', 
+      templateUrl: 'app/auth/signupPartial.html',
       controller: 'AuthController'
     });
 
-    // Add $httpInterceptor into the array of interceptors. 
-    // like middleware for ajax calls 
+    // Add $httpInterceptor into the array of interceptors.
+    // like middleware for ajax calls
     $httpProvider.interceptors.push('AttachTokens');
 })
 .factory('AttachTokens', function ($window) {
@@ -71,7 +71,11 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
   };
   return attach;
 })
-.run(function ($rootScope, $location, Auth) {
+.controller('AppCtrl', function ($rootScope, $location, Auth, Court, $scope) {
+  $rootScope.foo = 'bar';
+  // $scope.foo = 'scopebar';
+  console.log('appModules rootScope:', $rootScope);
+  console.log('appModules rootScope:', $scope.foo);
   // here inside the run phase of angular, our services and controllers
   // have just been registered and our app is ready
   // however, we want to make sure the user is authorized
@@ -79,7 +83,7 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
   // when it does change routes, we then look for the token in localstorage
   // and send that token to the server to see if it is a real user or hasn't expired
   // if it's not valid, we then redirect back to signin/signup
-  $rootScope.$on('$stateChangeStart', function (evt, toState, toParams, fromState, fromParams) {   
+  $rootScope.$on('$stateChangeStart', function (evt, toState, toParams, fromState, fromParams) {
     if (toState.views && toState.data.authenticate && !Auth.isAuth()) {
       $location.path('/login');
     }
