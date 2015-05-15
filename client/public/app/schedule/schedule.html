@@ -1,0 +1,26 @@
+<div>
+
+  <div class="courtName">
+    <!-- display the selected court's name -->
+    <div class="close" ng-click="returnToMap()">X</div>
+    <h4 class="courtName" ng-model='court'>{{ scheduleInfo.name }}</h4>
+    <!-- display when the selected court's address  -->
+    <p ng-model='court'> {{ scheduleInfo.address }}</p>
+  </div>
+  <!-- display today's schedule for the selected court -->
+
+  <div>
+    <table>
+
+      <tr><th class='sched'>Current Schedule:</th></tr>
+      <tr ng-repeat='rsvp in times'>
+        <td>{{ rsvp.count }} Players @ {{ rsvp.starttime | date:'shortTime' }}</td>
+      </tr>
+    </table>
+
+    <button ng-click="goToRSVP()">RSVP</button>
+  </div>
+  
+
+
+</div> <!-- end court partial -->

@@ -70,7 +70,7 @@ angular.module('app.services', [])
 
   this.getRSVPs = function(results, cb) {
     var rsvpInfo;
-    if(results.id){
+    // if(results.id){
       // send a request to get all the rsvp's for that court
       $http({
         method: 'GET',
@@ -109,7 +109,7 @@ angular.module('app.services', [])
       .catch(function(error){
         return new Error('An error occurred while looking up the schedule: ',error);
       });
-    }
+    // }
   };
 
 

@@ -1,7 +1,7 @@
 angular.module('app.courts', [])
 
 // create CourtController to send data from database to the view
-.controller('CourtController', function ($scope, $state, $window, Court) {
+.controller('CourtController', function ($scope, $state, $window, Court, $rootScope) {
 
   // stores a reference to the injected Court service
   $scope.court = Court;
@@ -28,9 +28,9 @@ angular.module('app.courts', [])
     var endtime = $scope.rsvp.endtime;
 
     // stores current court data stored on scope (comes from court service variables)
-    var courtName = $scope.court.currentCourtData.name;
-    var address = $scope.court.currentCourtData.address;
-    var placeId = $scope.court.currentCourtData.placeId;
+    var courtName = $rootScope.scheduleInfo.name;
+    var address = $rootScope.scheduleInfo.address;
+    var placeId = $rootScope.scheduleInfo.placeId;
     
     // adjusts time to appropriately store in the database
     starttime.setHours(starttime.getHours() - 1);
@@ -63,7 +63,8 @@ angular.module('app.courts', [])
     // to reload the view
     Court.postRsvp(rsvp)
       .then(function (data){
-        $scope.reloadState();
+        console.log("RSVP SENT");
+        $state.go('home');
       });
 
     // clear the form in the court partial

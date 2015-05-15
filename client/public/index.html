@@ -43,6 +43,7 @@
   <script type="text/javascript" src="app/courts/courts.js"></script>
   <script type="text/javascript" src="app/users/users.js"></script>
   <script type="text/javascript" src="app/services/services.js"></script>
+  <script type="text/javascript" src="app/schedule/schedule.js"></script>
   <script type="text/javascript" src="app/app.module.js"></script>
 
   <!-- Used by gulp's livereload. Needs to be stripped out for production -->
@@ -54,7 +55,6 @@
 
   <div class="grid-frame" ng-controller="AppCtrl">
     <div class="map-container" ng-controller="mapController" ng-init="geolocateUser()">
-      <p>{{foo}}Testing</p>
       <!-- Used id's. I am ashamed -->
       <div id="map-canvas" class="map-canvas"></div>
     </div>
