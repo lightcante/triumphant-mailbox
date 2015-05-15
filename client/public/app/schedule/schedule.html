@@ -2,7 +2,7 @@
 
   <div class="courtName">
     <!-- display the selected court's name -->
-    <div class="close" ng-click="returnToMap()">X</div>
+    <div class="close" ng-click="returnToMap()"><i class="fa fa-caret-left"></i></div>
     <h4 class="courtName" ng-model='court'>{{ scheduleInfo.name }}</h4>
     <!-- display when the selected court's address  -->
     <p ng-model='court'> {{ scheduleInfo.address }}</p>
@@ -18,7 +18,7 @@
       </tr>
     </table>
 
-    <button ng-click="goToRSVP()">RSVP</button>
+    <button class='rsvpButton' ng-click="goToRSVP()">RSVP</button>
   </div>
   
 
