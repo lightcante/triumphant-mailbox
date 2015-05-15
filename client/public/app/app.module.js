@@ -4,6 +4,7 @@ var app = angular.module('app', [
   'app.courts',
   'app.auth',
   'app.services',
+  'app.schedule',
   'ui.router'
 ]);
 
@@ -42,6 +43,13 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
       url: '/schedule',
       templateUrl: 'app/schedule/schedule.html',
       controller: 'ScheduleController'
+    })
+
+    // create a signup state with a single view for the signup form
+    .state('rsvp', {
+      url: '/rsvp',
+      templateUrl: 'app/schedule/rsvp.html',
+      controller: 'CourtController'
     });
 
     // Add $httpInterceptor into the array of interceptors.

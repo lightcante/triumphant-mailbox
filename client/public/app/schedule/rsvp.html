@@ -1,0 +1,10 @@
+  <div class='rsvp-submit userInput'>
+    <h4>Schedule A Time To Play!</h4>
+    <form class = 'rsvpForm' name='rsvpForm' ng-submit='addRsvp()' novalidate>
+
+      <input type='date' ng-model='rsvp.date' placeholder='{ new Date() }'  required/>
+      <input type='time' ng-model='rsvp.starttime' placeholder='Start-time' required/>
+      <input type='time' ng-model='rsvp.endtime' placeholder='End-time' required/>
+      <button class='buttonInput' type='submit' ng-disabled="rsvpForm.$invalid">Submit RSVP!</button>
+    </form>
+  </div> <!-- end rsvp-submit -->
