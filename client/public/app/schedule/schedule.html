@@ -1,22 +1,20 @@
 <div class='scheduleView'>
 
-  <div class="courtName">
+  <div class="courtName current">
     <!-- display the selected court's name -->
-    <div class="close" ng-click="returnToMap()"><i class="fa fa-caret-left"></i></div>
-    <h4 class="courtName" ng-model='court'>{{ scheduleInfo.name }}</h4>
+    <div class="close" ng-click="returnToMap()"><i class="fa fa-3x fa-caret-left"></i></div>
+    <div class="courtName" ng-model='court'>{{ scheduleInfo.name }}</div>
     <!-- display when the selected court's address  -->
     <p ng-model='court'> {{ scheduleInfo.address }}</p>
   </div>
   <!-- display today's schedule for the selected court -->
 
-  <div>
-    <div class='current'>Current Schedule</div>
+  <div class='current'>
+    <div class='currentTitle'>Current Schedule</div>
       <div class='timeItem' ng-repeat='rsvp in times'>
         {{ rsvp.count }} Players @ {{ rsvp.starttime | date:'shortTime' }}
       </div>
-      <div class='buttonDiv'>
-        <button class='button' ng-click="goToRSVP()">RSVP</button>
-      </div>
+      <button class='button' ng-click="goToRSVP()">RSVP</button>
   </div>
   
 

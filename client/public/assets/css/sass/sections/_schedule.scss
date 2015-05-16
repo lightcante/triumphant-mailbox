@@ -23,4 +23,22 @@ $font-family-base: 'Share', sans-serif;
 .current {
   color: white;
   text-align: center;
+  margin-bottom: 10px;
+}
+
+.button {
+  display: block;
+  margin: 0 auto;
+}
+
+.close {
+  cursor: pointer;
+}
+
+.currentTitle {
+  margin-bottom: 10px;
+}
+
+.courtName {
+  font-size: 28px;
 }
