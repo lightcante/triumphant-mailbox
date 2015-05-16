@@ -1,10 +1,14 @@
-  <div class='rsvp-submit userInput'>
-    <h4>Schedule A Time To Play!</h4>
-    <form class = 'rsvpForm' name='rsvpForm' ng-submit='addRsvp()' novalidate>
+  <div class='rsvp userInput'>
 
-      <input type='date' ng-model='rsvp.date' placeholder='{ new Date() }'  required/>
-      <input type='time' ng-model='rsvp.starttime' placeholder='Start-time' required/>
-      <input type='time' ng-model='rsvp.endtime' placeholder='End-time' required/>
-      <button class='buttonInput' type='submit' ng-disabled="rsvpForm.$invalid">Submit RSVP!</button>
+    <div class='court-name'> {{scheduleInfo.name}} </div>
+    <div class='court-address'> {{scheduleInfo.address}} </div>
+
+    <form class='rsvpForm' name='rsvpForm' ng-submit='addRsvp()' novalidate>
+
+      <div>Enter Date<input type='date' ng-model='rsvp.date' placeholder='Enter Date' class='inputDate' required/></div>
+      <div>Start Time<input type='time' ng-model='rsvp.starttime' placeholder='Start Time' class='inputStartTime' required/></div>
+      <div>End Time<input type='time' ng-model='rsvp.endtime' placeholder='End Time' class='inputEndTime' required/></div>
+      <button class='button' type='submit' ng-disabled="rsvpForm.$invalid">SUBMIT</button>
     </form>
+
   </div> <!-- end rsvp-submit -->
