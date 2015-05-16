@@ -3,12 +3,12 @@
   <h2>Login</h2>
   <div class='userInput'>
     <form name="loginForm" ng-submit='login()' novalidate>
-      <input type='text' ng-model='user.username' placeholder='Username' ng-minlength="4"  required>
+      <input class='typeArea' type='text' ng-model='user.username' placeholder='Username' ng-minlength="4"  required>
 
-      <input type="password" ng-model='user.password' placeholder='Password' ng-minlength="4" required>
+      <input class='typeArea' type="password" ng-model='user.password' placeholder='Password' ng-minlength="4" required>
 
-      <button class='buttonInput' type='submit' ng-disabled="loginForm.$invalid">Login</button><br>
-      <a ui-sref="signup">Don't have an account? <strong>Sign Up</strong></a>
+      <button class='buttonInput button' type='submit' ng-disabled="loginForm.$invalid">Login</button><br>
+      <a class="linkText" ui-sref="signup">Don't have an account? <strong>Sign Up</strong></a>
 
     </form>
 

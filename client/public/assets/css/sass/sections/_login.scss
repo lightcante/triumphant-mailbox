@@ -1,0 +1,23 @@
+@import url(http://fonts.googleapis.com/css?family=Share:400,400italic,700italic);
+$font-family-base: 'Share', sans-serif;
+
+
+
+.login-partial {
+  background-color: $primary-color;
+  color: white;
+  
+  .typeArea {
+    background-color: $secondary-color;
+  }
+
+  button {
+    margin-left: 100px;
+    // margin-right: auto;
+  }
+
+  .linkText {
+    color: white;
+  }
+
+}

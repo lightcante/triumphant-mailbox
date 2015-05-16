@@ -3,9 +3,9 @@
   <h2>Sign Up</h2>
   <div class='userInput'>
     <form name="signupForm" ng-submit='signup()' novalidate>
-      <input type='text' ng-model='user.username' placeholder='Username' ng-minlength="4" required>
+      <input class='typeArea' type='text' ng-model='user.username' placeholder='Username' ng-minlength="4" required>
 
-      <input type="password" ng-model='user.password' placeholder='Password' ng-minlength="4" required>
+      <input class='typeArea' type="password" ng-model='user.password' placeholder='Password' ng-minlength="4" required>
 
       <input type="email" ng-model='user.email' placeholder='Email' ng-minlength="4" required>
 
