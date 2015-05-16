@@ -1,6 +1,9 @@
 <div class='login-partial auth-container'>
 
-  <h2>Login</h2>
+  <div class="title">
+    <h2>Login</h2>
+  </div>
+  
   <div class='userInput'>
     <form name="loginForm" ng-submit='login()' novalidate>
       <input class='typeArea' type='text' ng-model='user.username' placeholder='Username' ng-minlength="4"  required>

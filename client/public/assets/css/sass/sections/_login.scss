@@ -3,16 +3,27 @@ $font-family-base: 'Share', sans-serif;
 
 
 
-.login-partial {
-  background-color: $primary-color;
+.auth-container {
   color: white;
-  
+  position: relative;
+  top: 50%;
+  transform: translateY(50%);
+
+  .title {
+    // display: block;
+    text-align: center;
+    // margin-left: auto;
+    // margin-right: auto;
+  }
+
   .typeArea {
     background-color: $secondary-color;
   }
 
   button {
-    margin-left: 100px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     // margin-right: auto;
   }
 
