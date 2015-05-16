@@ -2,16 +2,43 @@
 
 $font-family-base: 'Share', sans-serif;
 
+.scheduleView {
+  color: white;
+}
 .courtName {
   h4 {
     font-family : $font-family-base;
     color: white;
-
   }
 
 }
 
-button {
-  background-color: #E41A4C;
-  border-style: none;
+.timeItem {
+  margin: 15px;
+  padding: 5px;
+  background-color: $secondary-color;
+  color: white;
+}
+
+.current {
+  color: white;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.button {
+  display: block;
+  margin: 0 auto;
+}
+
+.close {
+  cursor: pointer;
+}
+
+.currentTitle {
+  margin-bottom: 10px;
+}
+
+.courtName {
+  font-size: 28px;
 }
