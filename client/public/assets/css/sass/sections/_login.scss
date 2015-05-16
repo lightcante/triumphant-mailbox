@@ -10,10 +10,10 @@ $font-family-base: 'Share', sans-serif;
   transform: translateY(50%);
 
   .title {
-    // display: block;
     text-align: center;
-    // margin-left: auto;
-    // margin-right: auto;
+    h2 {
+      color: white;
+    }
   }
 
   .typeArea {
