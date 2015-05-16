@@ -21,7 +21,8 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
       data: {
         authenticate: true
       },
-      url: '/'
+      url: '/',
+      controller: 'AppCtrl'
     })
 
     // create a login state with a single view for the login form
@@ -73,11 +74,21 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
   };
   return attach;
 })
-.controller('AppCtrl', function ($rootScope, $location, Auth, Court, $scope) {
-  $rootScope.foo = 'bar';
-  // $scope.foo = 'scopebar';
-  console.log('appModules rootScope:', $rootScope);
-  console.log('appModules rootScope:', $scope.foo);
+.controller('AppCtrl', function ($rootScope, $location, Auth, $scope) {
+  
+  // Set the scope variable for the ng-class in index, then
+  // perform login protocol
+  $scope.isAuth = Auth.isAuth();
+  
+  $scope.$watch(Auth.isAuth, function (oldVal, newVal) {
+    $scope.isAuth = newVal || oldVal;
+  });
+
+  console.log('isAuth: ', $scope.isAuth);
+  if (!$scope.isAuth) {
+    $location.path('/login');
+  }
+
   // here inside the run phase of angular, our services and controllers
   // have just been registered and our app is ready
   // however, we want to make sure the user is authorized
@@ -86,7 +97,7 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
   // and send that token to the server to see if it is a real user or hasn't expired
   // if it's not valid, we then redirect back to signin/signup
   $rootScope.$on('$stateChangeStart', function (evt, toState, toParams, fromState, fromParams) {
-    if (toState.views && toState.data.authenticate && !Auth.isAuth()) {
+    if (toState.data && toState.data.authenticate && !Auth.isAuth()) {
       $location.path('/login');
     }
   });

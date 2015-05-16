@@ -10,11 +10,11 @@
   <link rel="stylesheet" href="assets/lib/foundation/css/normalize.min.css">
    --><!-- <link rel="stylesheet" href="assets/css/styles.css"> -->
   <link rel="stylesheet" href="assets/css/main.css">
-
+<!-- 
   <link href='https://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Playball' rel='stylesheet' type='text/css'>
   <link href='https://fonts.googleapis.com/css?family=Biryani:600' rel='stylesheet' type='text/css'>
-
+ -->
 <!-- <div>
 
   <p class="fine-print">
@@ -60,7 +60,7 @@
     </div>
 
     <div class="grid-block sidepanel">
-      <div class="grid-block stateview loggedIn">
+    <div class="grid-block stateview" ng-class="{loggedIn : isAuth }">
         <!-- <h1>Pickup!</h1> -->
         <div ui-view ></div>
       </div>
