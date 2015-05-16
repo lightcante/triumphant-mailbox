@@ -5,7 +5,7 @@ angular.module('app.courts', [])
 
   // stores a reference to the injected Court service
   $scope.court = Court;
-  
+
   // stores the state of the view
   $scope.state = $state;
 
@@ -13,15 +13,19 @@ angular.module('app.courts', [])
   // the form data from the court partial
   $scope.rsvp = {};
 
-  // function to enable reloading of the view 
+  // function to enable reloading of the view
   // (used to reload views so they update to avoid cluttering with an ajax call)
   $scope.reloadState = function() {
     $scope.state.reload();
   };
-  
+
+  $scope.returnToMap = function(){
+    $state.go('home');
+  };
+
   //allows users to add rsvp.  prepares rsvp to be stored in table
   $scope.addRsvp = function () {
-    
+
     // stores submitted form data to fill out attributes of an rsvp
     var date = $scope.rsvp.date;
     var starttime = $scope.rsvp.starttime;
@@ -31,7 +35,7 @@ angular.module('app.courts', [])
     var courtName = $rootScope.scheduleInfo.name;
     var address = $rootScope.scheduleInfo.address;
     var placeId = $rootScope.scheduleInfo.placeId;
-    
+
     // adjusts time to appropriately store in the database
     starttime.setHours(starttime.getHours() - 1);
     endtime.setHours(endtime.getHours() - 1);
