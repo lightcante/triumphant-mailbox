@@ -5,9 +5,9 @@
 
     <form class='rsvpForm' name='rsvpForm' ng-submit='addRsvp()' novalidate>
 
-      <input type='date' ng-model='rsvp.date' placeholder='Enter Date' class='inputDate' required/>
-      <input type='time' ng-model='rsvp.starttime' placeholder='Start Time' class='inputStartTime' required/>
-      <input type='time' ng-model='rsvp.endtime' placeholder='End Time' class='inputEndTime' required/>
+      <div>Enter Date<input type='date' ng-model='rsvp.date' placeholder='Enter Date' class='inputDate' required/></div>
+      <div>Start Time<input type='time' ng-model='rsvp.starttime' placeholder='Start Time' class='inputStartTime' required/></div>
+      <div>End Time<input type='time' ng-model='rsvp.endtime' placeholder='End Time' class='inputEndTime' required/></div>
       <button class='button' type='submit' ng-disabled="rsvpForm.$invalid">SUBMIT</button>
     </form>
 
