@@ -78,12 +78,16 @@ app.config(function($stateProvider, $urlRouterProvider, $httpProvider) {
   
   // Set the scope variable for the ng-class in index, then
   // perform login protocol
-  $scope.isAuthed = Auth.isAuth();
-  console.log('isAuthed: ', $scope.isAuthed);
-  if (!$scope.isAuthed) {
+  $scope.isAuth = Auth.isAuth();
+  
+  $scope.$watch(Auth.isAuth, function (oldVal, newVal) {
+    $scope.isAuth = newVal || oldVal;
+  });
+
+  console.log('isAuth: ', $scope.isAuth);
+  if (!$scope.isAuth) {
     $location.path('/login');
   }
-
 
   // here inside the run phase of angular, our services and controllers
   // have just been registered and our app is ready
